@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>   
+<!DOCTYPE mapper   
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.BuysDao">
+    <!-- 这里namespace必须是Dao接口的路径” -->
+    <select id="showBuys" parameterType="buys" resultType="buys">
+    	select * from bought
+    </select>
+    <select id="queryBuys" parameterType="buys" resultType="buys">
+    	select * from buys where id=#{id}
+    </select>
+    <update id="updatezhuangtai" parameterType="buys">
+    	update buys set zhuangtai=#{zhuangtai} where id=#{id}
+    </update>
+    <insert id="insertBuys" parameterType="buys">
+    	insert into buys (materialid,num,price,detail) VALUES (#{materialid},#{num},#{price},#{detail})
+    </insert>
+    
+</mapper>
